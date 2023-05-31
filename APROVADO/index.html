@@ -187,6 +187,21 @@
     max-height: none;
   }
 }
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .pulse-button {
+    animation: pulse 1s infinite;
+  }
 
     </style>
 </head>
@@ -215,7 +230,9 @@
 </div>
 <p><div style="text-align: center;">Em caso de dúvidas, fale com nosso suporte clicando no botão abaixo.</div></p>
 <hr class="mt-3">
-    <a href="https://api.whatsapp.com/send?phone=554791234737&text=oi%20manu%20j%C3%A1%20efetuei%20o%20pagamento%20segue%20o%20comprovante%20logo%20abaixo!%20"><img src="suporte.webp" alt="some text" width=300 height=150>
+   <a href="https://api.whatsapp.com/send?phone=554791234737&text=oi%20manu%20j%C3%A1%20efetuei%20o%20pagamento%20segue%20o%20comprovante%20logo%20abaixo!%20">
+  <img src="suporte.webp" alt="some text" width="600" height="350" class="pulse-button">
+</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
