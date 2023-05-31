@@ -206,32 +206,12 @@
     })(jQuery);
 
      function openEmail(emailProvider) {
-  var userAgent = navigator.userAgent.toLowerCase();
-
   if (emailProvider === 'gmail') {
-    if (/iphone|ipad|ipod/.test(userAgent)) {
-      window.location.href = "googlegmail://";
-    } else if (/android/.test(userAgent)) {
-      window.location.href = "googlegmail://";
-    } else {
-      window.open("https://mail.google.com/", "_blank");
-    }
+    window.open("https://mail.google.com/", "_blank");
   } else if (emailProvider === 'outlook') {
-    if (/iphone|ipad|ipod/.test(userAgent)) {
-      window.location.href = "microsoft://";
-    } else if (/android/.test(userAgent)) {
-      window.location.href = "microsoft://";
-    } else {
-      window.open("https://outlook.live.com/", "_blank");
-    }
+    window.open("https://outlook.live.com/", "_blank");
   } else if (emailProvider === 'yahoo') {
-    if (/iphone|ipad|ipod/.test(userAgent)) {
-      window.location.href = "ymail://";
-    } else if (/android/.test(userAgent)) {
-      window.location.href = "ymail://";
-    } else {
-      window.open("https://mail.yahoo.com/", "_blank");
-    }
+    window.open("https://mail.yahoo.com/", "_blank");
   }
 }
 </script>
