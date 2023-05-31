@@ -26,6 +26,10 @@
             margin: 0;
             font-family: sans-serif;
         }
+        .linha-pontilhada {
+      border-top: 1px dotted black;
+      margin-bottom: 10px;
+    }
         h1 {
             font-size: 42px;
         }
@@ -130,33 +134,76 @@
                 font-size: 5vw;
             }
         }
+        .finger {
+      animation: moveFinger 1s infinite;
+      margin-top: 6em;
+      width: 131px;
+    }
+    
+    @keyframes moveFinger {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    .image-wrapper {
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .image-wrapper img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 600px) {
+    .image-wrapper img {
+      width: 96px;
+      height: 96px;
+    }
+  }
     </style>
 </head>
 <body>
-<div class="banner py-lg-1 py-sm-1 center white">
-    PARABENS SUA COMPRA FOI RESERVADA!
+
 </div>
 <section class="px-lg-20 px-sm-2 center">
     <br>
-    <img src="logo.png" alt="some text" width=60 height=42>
-    <h1>
-        <span class="new-price">Parabens!</span><p><h1>BOLETO GERADO!</p>
+    
     </h1>
-    <hr class="mt-3">
-    <p>Transações via <b>BOLETO,</b> podem demorar até 2 dias uteis para serem compensadas, após a confirmação do pagamento em nossos sistemas você recebera seu acesso imediato ao <b>Bumbum Invejado.</b></p>
+    <img class="finger" src="d-2.png" alt="Dedo">
+    
+    <p>Falta só uma coisa pra você começas a mudar seu bumbum com o Programa <b>Bumbum Invejado.</b></p>
                             
-    <p><div style="text-align: center;">Nós liberamos também a opção <b>PIX</b> ou <b>CARTÃO</b> onde seu acesso e liberado imediatamente.</div></p>
+    <p><div style="text-align: center;">Faça o pagamento do <B>BOLETO</B> clicando no botão acima para que você possa aumentar seu bumbum o quanto antes!
+      <br>
+    <br>
 
-    <p><div style="text-align: center;">Para atualizar sua forma de pagamento basta clicar no <b>BOTÃO ABAIXO</b></div></p>
 
-    <h1>
-
-    <a class="btn alt mt-3" href="https://go.perfectpay.com.br/PPU38CKCGLS?src=atualizou-pagamento">
-        SIM! QUERO ATULAIZAR AGORA!
-    </a></h1>
-    <p><div style="text-align: center;">Nosso time de suporte tambem entra em contato com você em menos de um minuto se tiver qualquer divida pode tira com ela.</div></p>
-    <p><div style="text-align: center;">MÁS se você já efetuar o Pagamento basta nos <b>ENVIAR</b> o comprovante clicando no  <b><u>botão abaixo!</u></b></div></p>
-
+    <div class="linha-pontilhada"></div>
+  <div class="linha-pontilhada"></div>
+ <p><div style="text-align: center;">Clique em um botão abaixo para ser direcionado ao seu e-mail</div></p>
+   
+<div class="image-wrapper">
+ <a href="#" onclick="openOutlook()"><img src="1.webp" alt="Imagem 1"></a>
+</div>
+<div class="image-wrapper">
+  <a href="#" onclick="openEmail('gmail')"><img src="2.webp" alt="Imagem 2"></a>
+</div>
+<div class="image-wrapper">
+   <a href="#" onclick="openEmail('yahoo')"><img src="3.webp" alt="Imagem 3"></a>
+</div>
+<p><div style="text-align: center;">Em caso de dúvidas, fale com nosso suporte clicando no botão abaixo.</div></p>
+<br>
+<hr class="mt-3">
+<p><div style="text-align: center;">Envie o Comprovane de pagamento para ganhar <b>2 bônus exclusivos!</b></div></p>
     <a href="https://api.whatsapp.com/send?phone=5547999281318&text=oi%20manu%20j%C3%A1%20efetuei%20o%20pagamento%20segue%20o%20comprovante%20logo%20abaixo!%20"><img src="suporte.png" alt="some text" width=300 height=150>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -171,6 +218,36 @@
             $(this).attr("href", urlFinal);
         });
     })(jQuery);
+
+     function openEmail(emailProvider) {
+    var userAgent = navigator.userAgent.toLowerCase();
+
+    if (emailProvider === 'gmail') {
+      if (/iphone|ipad|ipod/.test(userAgent)) {
+        window.location.href = "googlegmail://";
+      } else if (/android/.test(userAgent)) {
+        window.location.href = "googlegmail://";
+      } else {
+        window.location.href = "https://mail.google.com/";
+      }
+    } else if (emailProvider === 'outlook') {
+      if (/iphone|ipad|ipod/.test(userAgent)) {
+        window.location.href = "microsoft://";
+      } else if (/android/.test(userAgent)) {
+        window.location.href = "microsoft://";
+      } else {
+        window.location.href = "https://outlook.live.com/";
+      }
+    } else if (emailProvider === 'yahoo') {
+      if (/iphone|ipad|ipod/.test(userAgent)) {
+        window.location.href = "ymail://";
+      } else if (/android/.test(userAgent)) {
+        window.location.href = "ymail://";
+      } else {
+        window.location.href = "https://mail.yahoo.com/";
+      }
+    }
+  }
 </script>
         <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DFMKE452Y"></script>
