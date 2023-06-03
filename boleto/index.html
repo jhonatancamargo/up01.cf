@@ -5,6 +5,20 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title>boleto-bbj</title>
+    <script type="text/javascript">
+        var back_redirect_back_link = '/fdc/completa/' + location.search;
+        // Não altere daqui para baixo
+        history.pushState({}, "", location.href);
+        history.pushState({}, "", location.href);
+
+        window.addEventListener('popstate', function (event) {
+            if (event.state) {
+                setTimeout(function () {
+                    location.href = back_redirect_back_link;
+                }, 1);
+            }
+        }, false);
+    </script>
     <style>
         html,
         body {
@@ -107,8 +121,8 @@
                 padding-top: 0.75rem;
             }
             .px-sm-2 {
-                padding-left: 1rem;
-                padding-right: 1rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
             }
             .btn {
                 max-width: 75%;
@@ -122,7 +136,7 @@
         }
         .finger {
       animation: moveFinger 1s infinite;
-      margin-top: 6em;
+      margin-top: 1em;
       width: 131px;
     }
     
@@ -146,13 +160,13 @@
     width: 200px;
     height: 200px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgb(38 25 25);
   }
 
   @media (max-width: 600px) {
     .image-wrapper img {
-      width: 96px;
-      height: 96px;
+      width: 78px;
+      height: 76px;
     }
   }
     </style>
@@ -205,7 +219,7 @@
         });
     })(jQuery);
 
-     function openEmail(emailProvider) {
+   function openEmail(emailProvider) {
   if (emailProvider === 'gmail') {
     window.open("https://mail.google.com/", "_blank");
   } else if (emailProvider === 'outlook') {
